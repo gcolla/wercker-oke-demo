@@ -16,7 +16,7 @@ build:
             cmd: 0.0.0.0 8080
             working-dir: $WERCKER_ROOT
             #tag: $WERCKER_GIT_COMMIT
-            tag: wercker-oke-demon
+            tag: ca99302a079e45eb641e24042a0451f3dbf762c0
             ports: "8080"
             username: $DOCKER_USERNAME
             password: $DOCKER_PASSWORD
