@@ -15,7 +15,8 @@ build:
             entrypoint: bin/get_ip
             cmd: 0.0.0.0 8080
             working-dir: $WERCKER_ROOT
-            tag: $WERCKER_GIT_COMMIT
+            #tag: $WERCKER_GIT_COMMIT
+            tag: werker-oke-demo:1.0
             ports: "8080"
             username: $DOCKER_USERNAME
             password: $DOCKER_PASSWORD
@@ -54,7 +55,7 @@ deploy-to-kubernetes:
         server: $OKE_MASTER
         token: $OKE_TOKEN
         insecure-skip-tls-verify: true
-        command: patch deployment/get-ip -p '{"spec":{"progressDeadlineSeconds":300}}'
+        command: patch deployment/get-ip -p '{"spec":{"progressDeadlineSeconds":240}}'
 
     # Watch the Kubernetes deployment. Once the pods are considered healthy the step will exit 0
     # If they aren't healthy within 60 seconds, it will exit with a non 0 exit code, and cause the run to fail.
